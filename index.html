@@ -49,10 +49,11 @@
 
 	<!-- Magnific Popup -->
 	<link rel="stylesheet" href="css/magnific-popup.css">
-
 	<!-- Owl Carousel  -->
 	<link rel="stylesheet" href="css/owl.carousel.min.css">
 	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<!-- light box  -->
+	<link rel="stylesheet" href="css/lightbox.css" />
 
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="sass/style.css">
@@ -317,7 +318,7 @@
 					<ul id="fh5co-gallery-list">
 						
 						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-1.jpg); "> 
-						<a href="images/gallery-1.jpg">
+						<a href="images/gallery-1.jpg" data-toggle="lightbox" data-gallery="example-gallery">
 							<div class="case-studies-summary">
 								<span>14 Photos</span>
 								<h2>Two Glas of Juice</h2>
@@ -325,7 +326,7 @@
 						</a>
 					</li>
 					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-2.jpg); ">
-						<a href="#" class="color-2">
+						<a href="images/gallery-2.jpg" class="color-2" data-toggle="lightbox" data-gallery="example-gallery">
 							<div class="case-studies-summary">
 								<span>30 Photos</span>
 								<h2>Timer starts now!</h2>
@@ -335,7 +336,7 @@
 
 
 					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-3.jpg); ">
-						<a href="#" class="color-3">
+						<a href="images/gallery-3.jpg" class="color-2" data-toggle="lightbox" data-gallery="example-gallery1">
 							<div class="case-studies-summary">
 								<span>90 Photos</span>
 								<h2>Beautiful sunset</h2>
@@ -343,7 +344,7 @@
 						</a>
 					</li>
 					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-4.jpg); ">
-						<a href="#" class="color-4">
+						<a href="images/gallery-4.jpg" class="color-2" data-toggle="lightbox" data-gallery="example-gallery1">
 							<div class="case-studies-summary">
 								<span>12 Photos</span>
 								<h2>Company's Conference Room</h2>
@@ -636,7 +637,8 @@
 	<script src="js/owl.carousel.min.js"></script>
 	<!-- countTo -->
 	<script src="js/jquery.countTo.js"></script>
-
+	<!-- light box -->
+	<script src="js/lightbox.js"></script>
 	<!-- Stellar -->
 	<script src="js/jquery.stellar.min.js"></script>
 	<!-- Magnific Popup -->
@@ -664,7 +666,14 @@
         month: d.getMonth() + 1,
         day: d.getDate(),
         enableUtc: false
-    });
+	});
+	
+	//light box onclick
+	$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+                event.preventDefault();
+                $(this).ekkoLightbox({
+				});
+            });
 </script>
 
 	</body>
