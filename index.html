@@ -684,8 +684,14 @@
 
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+		
 	</div>
-
+	
+	<div class="mute" onclick="mutePlay()">
+		<a><i id="mute-icon"  class="icon-pause"></i></a>
+		
+	</div>
+	
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
@@ -737,14 +743,34 @@
 		});
 	</script>
 	<script>
+	
+	
 		document.getElementById('music').volume = 0.4;
+		var muteButton=document.getElementsByClassName('mute');
 		document.addEventListener('click', musicPlay);
+		
+
+		function mutePlay() {
+			
+
+			if(document.getElementById('music').paused){
+				document.getElementById('music').play();
+				document.getElementById("mute-icon").className="icon-pause";
+			}else if(!document.getElementById('music').paused){
+				document.getElementById('music').pause()
+				document.getElementById("mute-icon").className="icon-play";
+			}
+			
+		}
 		function musicPlay() {
 
 			document.getElementById('music').play();
 			document.getElementById('music').volume = 0.4;
 			document.removeEventListener('click', musicPlay);
 		}
+
+
+	
 	</script>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script>
 	<script src="./js/petals.js"></script>
