@@ -1782,7 +1782,7 @@ form label {
 }
 
 .fh5co-nav-toggle {
-  position: absolute;
+  position: fixed;
   right: 0px;
   top: 10px;
   z-index: 21;
