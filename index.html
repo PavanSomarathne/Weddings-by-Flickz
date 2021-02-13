@@ -658,9 +658,9 @@
 				</div>
 				<div class="row animate-box">
 					<div class="col-md-1 "></div>
-					<div class="col-md-8 col-md-offset-1">
+					<div class="col-md-8 col-md-offset-1" id="contactForm">
 						<form class="pageclip-form"
-							action="https://send.pageclip.co/eKviLCpH5UfuWMtbshFkB1IpZK5e20s7/Contact-flickz"
+							action=""
 							method="post" style="overflow: auto;">
 							<div class="col-md-6 col-sm-6">
 								<div class="form-group m-0">
@@ -679,7 +679,7 @@
 							<div class="col-md-12 col-sm-12">
 								<div class="form-group">
 									<label for="email" class="sr-only">Messsage</label>
-									<textarea type="text" name="Message" class="form-control" id="email"
+									<textarea type="text" name="Message" class="form-control" id="msg"
 										placeholder="Messsage" required></textarea>
 								</div>
 							</div>
@@ -745,6 +745,54 @@
 	<script src="js/simplyCountdown.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
+
+	<script type="text/javascript">
+
+		
+
+		function send(event) {
+			event.preventDefault();
+
+
+			var person = {
+				name:"FliCkz",
+				subject:"New Message",
+				receiver:"pavanpabs@gmail.com,dsblansakara@gmail.com",
+				text:"New message from one of your clients",
+				data:[{
+					field:"Customer's name :",
+					value: $("#name").val()
+				},{
+					field:"Customer's email/tp no :",
+					value:$("#email").val()
+				},{
+					field:"Customer's message :",
+					value:$("#msg").val()
+				}]
+				
+			}
+			
+			console.log(person);
+			//$('#contactForm').html('sending..');
+	
+			$.ajax({
+				url: 'https://form-to-email-api.herokuapp.com/api/email',
+				type: 'post',
+				async: false,
+				dataType: 'json',
+				contentType: 'application/json',
+				success: function (data) {
+					console.log(data);
+					$('#contactForm').html('success');
+				},
+				data: JSON.stringify(person)
+			});
+		}
+
+
+const form = document.querySelector('.pageclip-form');
+form.addEventListener('submit', send);
+	</script>
 
 	<script>
 		var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
