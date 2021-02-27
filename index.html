@@ -53,10 +53,153 @@
 	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css'>
 	<link rel="stylesheet" href="./css/petals.css">
 
+	<script src="https://kit.fontawesome.com/da373a1c0b.js" crossorigin="anonymous"></script>
+
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+	<style>
+		/* Rating Star Widgets Style */
+		.rating-stars ul {
+			list-style-type: none;
+			padding: 0;
+
+			-moz-user-select: none;
+			-webkit-user-select: none;
+		}
+
+		.rating-stars ul>li.star {
+			display: inline-block;
+
+		}
+
+		/* Idle State of the stars */
+		.rating-stars ul>li.star>i.fa {
+			font-size: 1em;
+			/* Change the size of the stars */
+			color: #ccc;
+			/* Color on idle state */
+		}
+
+		/* Hover state of the stars */
+		.rating-stars ul>li.star.hover>i.fa {
+			color: #FFCC36;
+		}
+
+		/* Selected state of the stars */
+		.rating-stars ul>li.star.selected>i.fa {
+			color: #FF912C;
+		}
+
+		.img-container {
+			object-fit: cover;
+			width: 100%;
+			height: auto;
+		}
+
+		.istar {
+			color: #FF912C
+		}
+
+		/* new testimonial carousal */
+		#quote-carousel {
+			padding: 0 10px 30px 10px;
+			margin-top: 0px;
+		}
+
+		#quote-carousel .carousel-control {
+			background: none;
+			color: #CACACA;
+			font-size: 2.3em;
+			text-shadow: none;
+			margin-top: 30px;
+		}
+
+		#quote-carousel .carousel-indicators {
+			position: relative;
+			right: 50%;
+			top: auto;
+			bottom: 0px;
+			margin-top: 20px;
+			margin-right: -19px;
+		}
+
+		#quote-carousel .carousel-indicators li {
+			color: crimson;
+
+			width: 10px;
+			height: 10px;
+			cursor: pointer;
+			border: 2px solid crimson;
+			box-shadow: 0 0 5px rgba(97, 72, 72, 0.185);
+			border-radius: 50%;
+			opacity: 0.4;
+			overflow: hidden;
+			transition: all .4s ease-in;
+			vertical-align: middle;
+		}
+
+		#quote-carousel .carousel-indicators .active {
+			width: 20px;
+			height: 20px;
+			border: 4px solid crimson;
+			border-radius: 50%;
+			opacity: 1;
+			transition: all .2s;
+		}
+
+		.test_name {
+			font-size: 1em;
+			font-weight: bold;
+		}
+
+		.item blockquote {
+			border-left: none;
+			margin: 0;
+			font-size: 1.2em;
+		}
+
+		.item blockquote p:before {
+			content: "\f10d";
+			font-family: 'Fontawesome';
+			font-size: 0.7em;
+			float: left;
+
+		}
+
+		.item blockquote p::after {
+			content: "\f10e";
+			font-family: 'Fontawesome';
+			font-size: 0.7em;
+			float: right;
+
+		}
+	</style>
+	<style>
+		/* Testimonial form responsive*/
+		/* Extra small devices (phones, 600px and down) */
+		@media only screen and (max-width: 600px) {
+			#testimonials {
+
+				background-color: seashell;
+				padding-top: 3%;
+				padding-bottom: 3%;
+			}
+
+		}
+
+		/* Small devices (portrait tablets and large phones, 600px and up) */
+		@media only screen and (min-width: 600px) {
+			#testimonials {
+				transform: rotate(10deg);
+				background-color: seashell;
+				padding-top: 3%;
+				padding-bottom: 3%;
+			}
+
+		}
+	</style>
 	<style>
 		.pageclip-form__success {
 			width: 100%;
@@ -113,7 +256,7 @@
 
 	<div class="fh5co-loader"></div>
 	<audio id="music" loop autoplay>
-		<source src="./assets/background_music.mp3">
+		<source src="./assets/background_music.mp">
 	</audio>
 
 	<div id="page">
@@ -121,7 +264,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-4">
-						<div id="fh5co-logo"><a href="index.html">Weddings by FlickZ <strong>.</strong></a></div>
+						<div id="fh5co-logo"><a href="index.html">Weddings by FlickZ </a></div>
 					</div>
 					<div class="col-xs-8 text-right menu-1">
 						<ul>
@@ -224,11 +367,11 @@
 									<li>
 										<div class="item">
 											<div class="projects-agile-grid-info">
-												<img src="images/middle_slider/daddy.jpg" alt="" />
+												<img src="images/bands/daddy.jpg" alt="" />
 												<div class="projects-grid-caption">
 													<br><br>
 													<h4>Daddy</h4>
-													<p>Band</p>
+													<p></p>
 												</div>
 											</div>
 										</div>
@@ -236,7 +379,7 @@
 									<li>
 										<div class="item">
 											<div class="projects-agile-grid-info">
-												<img src="images/middle_slider/in.jpg" alt="" />
+												<img src="images/bands/infinity.jpg" alt="">
 												<div class="projects-grid-caption">
 													<br><br>
 													<h4>Infiniy</h4>
@@ -248,7 +391,7 @@
 									<li>
 										<div class="item">
 											<div class="projects-agile-grid-info">
-												<img src="images/middle_slider/wa.jpg" alt="" />
+												<img src="images/bands/wayo.jpg" alt="" />
 												<div class="projects-grid-caption">
 													<br><br>
 													<h4>Wayo</h4>
@@ -260,7 +403,7 @@
 									<li>
 										<div class="item">
 											<div class="projects-agile-grid-info">
-												<img src="images/middle_slider/ht.jpg" alt="" />
+												<img src="images/bands/hot_chocho.jpg" alt="" />
 												<div class="projects-grid-caption">
 													<br><br>
 													<h4>Hot Chocolate</h4>
@@ -276,7 +419,7 @@
 												<div class="projects-grid-caption">
 													<br><br>
 													<h4>Rated R</h4>
-													<p>band</p>
+													<p></p>
 												</div>
 											</div>
 										</div>
@@ -447,8 +590,8 @@
 								</div>
 
 							</li>
-							
-							
+
+
 
 						</ul>
 					</div>
@@ -456,7 +599,7 @@
 			</div>
 		</div>
 
-<!--
+		<!--
 		<div id="fh5co-counter" class="fh5co-bg fh5co-counter" style="background-image:url(images/img_bg_5.jpg);">
 			<div class="overlay"></div>
 			<div class="container">
@@ -524,51 +667,101 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-12 animate-box">
-							<div class="wrap-testimony">
-								<div class="owl-carousel-fullwidth">
-									<div class="item">
-										<div class="testimony-slide active text-center">
-											<figure>
-												<img src="images/couple-1.jpg" alt="user">
-											</figure>
-											<span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
-											<blockquote>
-												<p>"Far far away, behind the word mountains, far from the countries
-													Vokalia and Consonantia, there live the blind texts. Separated they
-													live in Bookmarksgrove right at the coast of the Semantics"</p>
-											</blockquote>
+						<div class="container">
+							<div class="row">
+								<div class="col-md-9">
+									<div class="carousel slide" data-ride="carousel" id="quote-carousel">
+
+										<!-- Carousel Slides / Quotes -->
+										<div class="carousel-inner text-center" id="carooo">
+
+											<!-- <div class="item ">
+												<blockquote>
+													<div class="row">
+														<div class="col-sm-8 col-sm-offset-2">
+															<p> Edureka has the best online courses!s </p>
+															<div id="" text-center'>
+																<i class='fa fa-star' style="color: yellow;"></i>
+																<i class='fa fa-star'></i>
+																<i class='fa fa-star'></i>
+																<i class='fa fa-star'></i>
+																<i class='far fa-star'></i>
+															
+															</div>
+															<small> Reviewer's Name </small>
+														</div>
+													</div>
+												</blockquote>
+											</div>
+										 -->
 										</div>
-									</div>
-									<div class="item">
-										<div class="testimony-slide active text-center">
-											<figure>
-												<img src="images/couple-2.jpg" alt="user">
-											</figure>
-											<span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
-											<blockquote>
-												<p>"Far far away, behind the word mountains, far from the countries
-													Vokalia and Consonantia, at the coast of the Semantics, a large
-													language ocean."</p>
-											</blockquote>
-										</div>
-									</div>
-									<div class="item">
-										<div class="testimony-slide active text-center">
-											<figure>
-												<img src="images/couple-3.jpg" alt="user">
-											</figure>
-											<span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
-											<blockquote>
-												<p>"Far far away, far from the countries Vokalia and Consonantia, there
-													live the blind texts. Separated they live in Bookmarksgrove right at
-													the coast of the Semantics, a large language ocean."</p>
-											</blockquote>
-										</div>
+										<!-- Bottom Carousel Indicators -->
+										<ol class="carousel-indicators" id="carooo_indicaters">
+											<!-- <li data-target="#quote-carousel" data-slide-to="0" class="active">
+											</li> -->
+
+										</ol>
+
+										<!-- Carousel Buttons Next/Prev -->
+										<!-- <a data-slide="prev" href="#quote-carousel" class="left carousel-control"><i
+												class="fa fa-chevron-left"> </i> </a>
+										<a data-slide="next" href="#quote-carousel" class="right carousel-control"><i
+												class="fa fa-chevron-right"></i></a> -->
 									</div>
 								</div>
+								<div class="col-md-3 col-xs-12 col-sm-12" id="testimonials">
+									<form id="testimonialForm" action="" method="post" style="overflow: auto;">
+
+										<div class="col-md-12 col-sm-12 ">
+
+											<div class='rating-stars text-center'>
+												<h4 class="test_name">Review our work</h4>
+												<ul id='stars'>
+													<li class='star' title='Poor' data-value='1'>
+														<i class='fa fa-star fa-fw'></i>
+													</li>
+													<li class='star' title='Fair' data-value='2'>
+														<i class='fa fa-star fa-fw'></i>
+													</li>
+													<li class='star' title='Good' data-value='3'>
+														<i class='fa fa-star fa-fw'></i>
+													</li>
+													<li class='star' title='Excellent' data-value='4'>
+														<i class='fa fa-star fa-fw'></i>
+													</li>
+													<li class='star' title='WOW!!!' data-value='5'>
+														<i class='fa fa-star fa-fw'></i>
+													</li>
+												</ul>
+											</div>
+
+										</div>
+										<input type="hidden" name="rate" id="rate_test">
+										<div class="col-md-12 col-sm-12 ">
+											<div class="form-group m-0">
+												<label for="name" class="sr-only">Name</label>
+												<input type="name" name="Name" class="form-control" id="name_test"
+													placeholder="Name" required>
+											</div>
+										</div>
+										<div class="col-md-12 col-sm-12">
+											<div class="form-group">
+												<label for="email" class="sr-only">Messsage</label>
+												<textarea type="text" name="Message" class="form-control" id="msg_test"
+													placeholder="Messsage" required></textarea>
+											</div>
+										</div>
+										<div class="col-xs-4  col-sm-4 col-md-3 ">
+										</div>
+										<div class="col-xs-4 col-sm-6 col-md-6 col-sm-6 padding-bottom-5">
+											<button type="submit" class="btn btn-default "><span>Submit</span></button>
+										</div>
+									</form>
+								</div>
 							</div>
+
 						</div>
+
 					</div>
 				</div>
 			</div>
@@ -622,8 +815,8 @@
 					</div>
 
 					<div class="col-md-6 animate-box">
-						<div class="fh5co-video fh5co-bg" style="background-image: url(images/img_bg_3.jpg); ">
-							<a href="https://vimeo.com/channels/staffpicks/93951774" class="popup-vimeo"><i
+						<div class="fh5co-video fh5co-bg" style="background-image: url(images/weddings/5.jpg); ">
+							<a href="https://www.youtube.com/watch?v=PDknZOuCBF4" class="popup-vimeo"><i
 									class="icon-video2"></i></a>
 							<div class="overlay"></div>
 						</div>
@@ -645,9 +838,7 @@
 				<div class="row animate-box">
 					<div class="col-md-1 "></div>
 					<div class="col-md-8 col-md-offset-1" id="contactForm">
-						<form id="contactForm"
-							action=""
-							method="post" style="overflow: auto;">
+						<form id="contactForm" action="" method="post" style="overflow: auto;">
 							<div class="col-md-6 col-sm-6">
 								<div class="form-group m-0">
 									<label for="name" class="sr-only">Name</label>
@@ -677,8 +868,58 @@
 							</div>
 						</form>
 					</div>
+
 				</div>
 			</div>
+		</div>
+		<div class="col-md-3 " id="testimonials"
+			style="transform: rotate(10deg);background-color:seashell;position: absolute;bottom: 100px;right: 100px;">
+			<form id="testimonialForm" action="" method="post" style="overflow: auto;margin: 15px;">
+
+				<div class="col-md-12 col-sm-12 ">
+
+					<div class='rating-stars text-center'>
+						<h4 class="test_name">Review our work</h4>
+						<ul id='stars'>
+							<li class='star' title='Poor' data-value='1'>
+								<i class='fa fa-star fa-fw'></i>
+							</li>
+							<li class='star' title='Fair' data-value='2'>
+								<i class='fa fa-star fa-fw'></i>
+							</li>
+							<li class='star' title='Good' data-value='3'>
+								<i class='fa fa-star fa-fw'></i>
+							</li>
+							<li class='star' title='Excellent' data-value='4'>
+								<i class='fa fa-star fa-fw'></i>
+							</li>
+							<li class='star' title='WOW!!!' data-value='5'>
+								<i class='fa fa-star fa-fw'></i>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+				<input type="hidden" name="rate" id="rate_test">
+				<div class="col-md-12 col-sm-12">
+					<div class="form-group m-0">
+						<label for="name" class="sr-only">Name</label>
+						<input type="name" name="Name" class="form-control" id="name_test" placeholder="Name" required>
+					</div>
+				</div>
+				<div class="col-md-12 col-sm-12">
+					<div class="form-group">
+						<label for="email" class="sr-only">Messsage</label>
+						<textarea type="text" name="Message" class="form-control" id="msg_test" placeholder="Messsage"
+							required></textarea>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-2">
+				</div>
+				<div class="col-md-6 col-sm-6">
+					<button type="submit" class="btn btn-default "><span>Submit</span></button>
+				</div>
+			</form>
 		</div>
 
 		<footer id="fh5co-footer" role="contentinfo">
@@ -734,26 +975,26 @@
 
 	<script type="text/javascript">
 
-		
+
 
 		function send(event) {
 			event.preventDefault();
 			var person = {
-				name:"FliCkZ",
-				subject:"New Message",
-				receiver:"pavanpabs@gmail.com,dsblansakara@gmail.com,shehancooray454@gmail.com",
-				text:"New message from one of your clients",
-				data:[{
-					field:"Customer's name :",
+				name: "FliCkZ",
+				subject: "New Message",
+				receiver: "pavanpabs@gmail.com,dsblansakara@gmail.com,shehancooray454@gmail.com",
+				text: "New message from one of your clients",
+				data: [{
+					field: "Customer's name :",
 					value: $("#name").val()
-				},{
-					field:"Customer's email/tp no :",
-					value:$("#email").val()
-				},{
-					field:"Customer's message :",
-					value:$("#msg").val()
+				}, {
+					field: "Customer's email/tp no :",
+					value: $("#email").val()
+				}, {
+					field: "Customer's message :",
+					value: $("#msg").val()
 				}]
-				
+
 			}
 
 			$.ajax({
@@ -771,8 +1012,8 @@
 		}
 
 
-const form = document.getElementById('contactForm');
-form.addEventListener('submit', send);
+		const form = document.getElementById('contactForm');
+		form.addEventListener('submit', send);
 	</script>
 
 	<script>
@@ -863,8 +1104,196 @@ form.addEventListener('submit', send);
 		});
 	</script>
 	<script src="js/jquery.flexisel.js"></script>
-	<!--Page Clip-->
-	<script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
+	<!--Firebase-->
+	<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
+	<script>
+		// Your web app's Firebase configuration
+		var firebaseConfig = {
+			apiKey: "AIzaSyDHMHUs6idkZLoH1Sc5T3nzQIYbj2Uo9N0",
+			authDomain: "flickz-91f5b.firebaseapp.com",
+			projectId: "flickz-91f5b",
+			storageBucket: "flickz-91f5b.appspot.com",
+			messagingSenderId: "340998144710",
+			appId: "1:340998144710:web:4cff3e0082353afbd50dc7"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		console.log(firebase);
+		var db = firebase.firestore();
+
+		//   db.collection("testimonials").add({
+		//     name:"pavan",
+		// 	rating:"5",
+		// 	message:"pavan"
+		// })
+		// .then((docRef) => {
+		//     console.log("Document written with ID: ", docRef.id);
+		// })
+		// .catch((error) => {
+		//     console.error("Error adding document: ", error);
+		// });
+
+		db.collection("testimonials").get().then((querySnapshot) => {
+			//var tree = document.createDocumentFragment();
+
+
+
+			var owlStage = document.getElementById("carooo");
+			var owlIndicaters = document.getElementById("carooo_indicaters");
+			var i = 0;
+			querySnapshot.forEach((doc) => {
+
+				//upper part
+				console.log(`${doc.id} => ${doc.data().name}`);
+
+				var starDiv = document.createElement("div");
+				for (let index = 0; index < doc.data().rating; index++) {
+					var istar = document.createElement("i");
+					istar.setAttribute("class", "fa fa-star istar");
+					starDiv.appendChild(istar);
+
+				}
+				for (let index = doc.data().rating; index < 5; index++) {
+					var istar = document.createElement("i");
+					istar.setAttribute("class", "far fa-star istar");
+					starDiv.appendChild(istar);
+
+				}
+
+
+				var small = document.createElement("small");
+				small.setAttribute("class", "test_name")
+				small.appendChild(document.createTextNode(doc.data().name));
+
+				var p = document.createElement("p");
+				p.appendChild(document.createTextNode(doc.data().message));
+
+				var div6 = document.createElement("div");
+				div6.setAttribute("class", "col-sm-8 col-sm-offset-2");
+				div6.appendChild(p);
+				div6.appendChild(small);
+				div6.appendChild(starDiv);
+
+				var div5 = document.createElement("div");
+				div5.setAttribute("class", "row");
+				div5.appendChild(div6);
+
+				var blockquote = document.createElement("blockquote");
+				blockquote.appendChild(div5);
+				if (i == 0) {
+					var div3 = document.createElement("div");
+					div3.setAttribute("class", "item active");
+					div3.appendChild(blockquote);
+				} else {
+					var div3 = document.createElement("div");
+					div3.setAttribute("class", "item ");
+					div3.appendChild(blockquote);
+
+				}
+				owlStage.appendChild(div3);
+
+				//Indicaters
+
+				if (i == 0) {
+					var li = document.createElement("li");
+					li.setAttribute("data-target", "#quote-carousel");
+					li.setAttribute("class", "active");
+					li.setAttribute("data-slide-to", i);
+				} else {
+					var li = document.createElement("li");
+					li.setAttribute("data-target", "#quote-carousel");
+					li.setAttribute("data-slide-to", i);
+
+				}
+
+				owlIndicaters.appendChild(li);
+
+				i++;
+			});
+
+
+
+
+
+		});
+		/* 1. Visualizing things on Hover - See next part for action on click */
+		$('#stars li').on('mouseover', function () {
+			var onStar = parseInt($(this).data('value'), 10); // The star currently mouse on
+
+			// Now highlight all the stars that's not after the current hovered star
+			$(this).parent().children('li.star').each(function (e) {
+				if (e < onStar) {
+					$(this).addClass('hover');
+				} else {
+					$(this).removeClass('hover');
+				}
+			});
+
+		}).on('mouseout', function () {
+			$(this).parent().children('li.star').each(function (e) {
+				$(this).removeClass('hover');
+			});
+		});
+
+		/* 2. Action to perform on click */
+
+		$('#stars li').on('click', function () {
+			var onStar = parseInt($(this).data('value'), 10); // The star currently selected
+			//clicked value
+			var stars = $(this).parent().children('li.star');
+			//previous clicked value
+			var preStars = document.getElementById("rate_test").value;
+
+			if (onStar == preStars) {
+				for (i = 0; i < onStar; i++) {
+					$(stars[i]).removeClass('selected');
+					$(stars[i]).removeClass('hover');
+				}
+
+			} else {
+				for (i = 0; i < stars.length; i++) {
+					$(stars[i]).removeClass('selected');
+				}
+
+				for (i = 0; i < onStar; i++) {
+					$(stars[i]).addClass('selected');
+				}
+
+			}
+			// JUST RESPONSE (Not needed)
+			var ratingValue = parseInt($('#stars li.selected').last().data('value'), 10);
+
+			$('#rate_test').val(ratingValue);
+
+		});
+
+		$('#testimonialForm').on('submit', function (e) {
+
+			e.preventDefault();
+			var name = $("#name_test").val();
+			var msg = $("#msg_test").val();
+			var rate = $("#rate_test").val();
+
+			db.collection("testimonials").add({
+				name: name,
+				rating: rate,
+				message: msg,
+				status: "Pending"
+			})
+				.then((docRef) => {
+					console.log("Document written with ID: ", docRef.id);
+				})
+				.catch((error) => {
+					console.error("Error adding document: ", error);
+				});
+		});
+
+
+	</script>
+
 </body>
 
 </html>

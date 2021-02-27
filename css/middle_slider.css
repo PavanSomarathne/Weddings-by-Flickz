@@ -63,7 +63,7 @@
 }
 
 .projects-agile-grid-info:hover .projects-grid-caption {
-  bottom: 0%;
+  bottom: -20%;
 }
 /*--flexisel--*/
 
@@ -139,102 +139,83 @@
 /*--//flexisel--*/
 
 /*-- Responsive design --*/
-
-@media (max-width: 1440px) {
-  .projects-grid-caption {
-    padding: 9em 1em 1em 1em;
-    bottom: -173%;
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .name_caroo {
+    color: blue;
+    background-color: violet;
   }
-}
-@media (max-width: 1366px) {
-  .projects-grid-caption {
-    padding: 10em 1em 1em 1em;
-    bottom: -183%;
-  }
-  .projects-grid-caption h4 {
-    font-size: 1.4em;
-    letter-spacing: 6px;
-  }
-}
-@media (max-width: 1280px) {
-  .projects-grid-caption {
-    padding: 10em 1em 1em 1em;
-    bottom: -197%;
-  }
-}
-@media (max-width: 1080px) {
-}
-@media (max-width: 1024px) {
-}
-@media (max-width: 991px) {
-  .projects-grid-caption {
-    bottom: -202%;
-  }
-}
-@media (max-width: 900px) {
-  .projects-grid-caption h4 {
-    font-size: 1.2em;
-    letter-spacing: 6px;
-  }
-  .projects-grid-caption {
-    padding: 11em 1em 1em 1em;
-    bottom: -223%;
-  }
-}
-@media (max-width: 800px) {
   .projects-grid-caption {
     padding: 12em 1em 1em 1em;
-    bottom: -252%;
+    bottom: -220%;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .name_caroo {
+    color: blue;
+    background-color: red;
+  }
+  .projects-grid-caption {
+    padding: 12em 1em 1em 1em;
+    bottom: -230%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .name_caroo {
+    color: blue;
+    background-color: blue;
+  }
+
+  .projects-grid-caption {
+    padding: 13em 1em 1em 1em;
+    bottom: -256%;
   }
   .projects-grid-caption h4 {
     letter-spacing: 3px;
   }
 }
-@media (max-width: 768px) {
-  .projects-grid-caption {
-    padding: 10em 1em 1em 1em;
-  }
-}
-@media (max-width: 736px) {
-}
-@media (max-width: 667px) {
-  .projects-grid-caption {
-    padding: 11em 1em 1em 1em;
-  }
-}
-@media (max-width: 640px) {
-  .projects-grid-caption {
-    padding: 8em 1em 1em 1em;
-  }
-}
-@media (max-width: 600px) {
-}
-@media (max-width: 568px) {
-  .projects-grid-caption {
-    padding: 10em 1em 1em 1em;
-  }
-}
-@media (max-width: 480px) {
-}
-@media (max-width: 414px) {
-  .projects-grid-caption {
-    padding: 5em 1em 1em 1em;
-  }
-}
-@media (max-width: 384px) {
-  .projects-grid-caption {
-    padding: 7em 1em 1em 1em;
-  }
-}
-@media (max-width: 375px) {
-}
-@media (max-width: 320px) {
-  .projects-grid-caption {
-    padding: 9em 1em 1em 1em;
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .name_caroo {
+    color: blue;
+    background-color: red;
   }
 }
 
-@media (max-width: 1440px) {
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .name_caroo {
+    color: blue;
+    background-color: green;
+  }
+  .projects-grid-caption {
+    padding: 12em 1em 1em 1em;
+    bottom: -210%;
+  }
+}
+@media only screen and (min-width: 1320px) {
+  .name_caroo {
+    color: red;
+    background-color: red;
+  }
+  .projects-grid-caption {
+    padding: 10em 1em 1em 1em;
+    bottom: -197%;
+  }
 }
 
-/*-- //Responsive design --*/
+@media only screen and (min-width: 1440px) {
+  .name_caroo {
+    color: blue;
+    background-color: blue;
+  }
+  .projects-grid-caption {
+    padding: 6em 1em 1em 1em;
+    bottom: -197%;
+  }
+}
